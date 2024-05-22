@@ -1,22 +1,32 @@
 <template>
-	<view class="map" :style="{
+	<view 
+	class="map" 
+	:style="{
 		width: `${size}px`,
 		height: `${size}px`,
 		left: `-${position[0]}px`,
 		top: `-${position[1]}px`,
-	}" @panmove="onPanmove" @pinchmove="onPinchmove">
-		<view class="layer day" :style="{
-			width: `${size}px`,
-			height: `${size}px`,
-			backgroundImage: `url(${day})`,
-			backgroundSize: `${size}px ${size}px`,
-		}"></view>
-		<view class="layer night" :class="{active: theme === 'night'}" :style="{
-			width: `${size}px`,
-			height: `${size}px`,
-			backgroundImage: `url(${night})`,
-			backgroundSize: `${size}px ${size}px`,
-		}"></view>
+	}" 
+	>
+		<view 
+			class="layer day" 
+			:style="{
+				width: `${size}px`,
+				height: `${size}px`,
+				backgroundImage: `url(${day})`,
+				backgroundSize: `${size}px ${size}px`,
+			}"
+		></view>
+		<view 
+			class="layer night" 
+			:class="{active: theme === 'night'}" 
+			:style="{
+				width: `${size}px`,
+				height: `${size}px`,
+				backgroundImage: `url(${night})`,
+				backgroundSize: `${size}px ${size}px`,
+			}"
+		></view>
 
 		<slot></slot>
 	</view>
@@ -55,7 +65,7 @@
 		},
 		data() {
 			return {
-
+				
 			};
 		},
 		computed: {
@@ -71,19 +81,14 @@
 			},
 		},
 		mounted() {
-			console.log(this.$el)
-			const at = new AnyTouch(this.$el);
-			//  destroy
-			this.$on('hook:destroyed', () => {
-				at.destroy();
-			});
+			
 		},
 	}
 </script>
 
 <style scoped lang="scss">
 	.map {
-		position: absolute;
+		position: relative;
 
 		.layer {
 			position: absolute;

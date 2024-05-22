@@ -1,17 +1,23 @@
 <template>
-	<view class="stage">
-		<MapCom :position="[90, 0]" :theme="mapTheme">
-			<template v-for="(item, index) in data">
-				<PointCom 
-					:key="index" 
-					 :img="item.point.img"
-					 :position="item.point.position"
-					:detail="item.detail" 
-					@click.native="pointClickHandler(item)"
-				></PointCom>
-			</template>
-		</MapCom>
-	</view>
+	<movable-area class="stage">
+		<movable-view 
+		direction="all" 
+		:scale="true"
+		:style="{width: 'auto', height: 'auto'}"
+		>
+			<MapCom :position="[90, 0]" :theme="mapTheme">
+				<template v-for="(item, index) in data">
+					<PointCom 
+						:key="index" 
+						 :img="item.point.img"
+						 :position="item.point.position"
+						:detail="item.detail" 
+						@click.native="pointClickHandler(item)"
+					></PointCom>
+				</template>
+			</MapCom>
+		</movable-view>
+	</movable-area>
 </template>
 
 <script>

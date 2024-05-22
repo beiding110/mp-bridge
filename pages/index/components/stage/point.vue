@@ -1,13 +1,21 @@
 <template>
-	<view class="point" :style="{
+	<view 
+	class="point" 
+	:style="{
 		width: `${size}px`,
 		height: `${size}px`,
 		backgroundImage: `url(${img})`,
 		backgroundSize: `${size}px auto`,
 		left: `${position[0]}px`,
 		top: `${position[1]}px`,
-	}">
-		<Pop :name="detail.name" :img="detail.img" :time="detail.time" :context="detail.context"></Pop>
+	}"
+	>
+		<Pop 
+			:name="detail.name" 
+			:img="detail.img" 
+			:time="detail.time" 
+			:context="detail.context"
+		></Pop>
 	</view>
 </template>
 
