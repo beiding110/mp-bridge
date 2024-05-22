@@ -1,0 +1,19 @@
+/* #ifdef H5 */
+.uni-body {
+	font-size: 12px;
+}
+
+uni-page-body{
+	height: 100%;
+	overflow: hidden;
+	background: #F4F4F4;
+}
+/* #endif */
+
+/* #ifdef MP-WEIXIN */
+page{
+	height: 100%;
+	font-size: 12px;
+	background: #F4F4F4;
+}
+/* #endif */

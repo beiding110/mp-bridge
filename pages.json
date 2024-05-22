@@ -1,0 +1,30 @@
+{
+    "easycom" : {
+        "autoscan" : true,
+        "custom" : {
+            "^my-(.*)" : "@/components/my/$1.vue",
+            "^layout-(.*)" : "@/layout/$1.vue"
+        }
+    },
+    "pages" : [
+        {
+            "path" : "pages/index/index"
+        }
+    ],
+	"subPackages": [
+		{
+			"root": "pages-sub-function",
+			"pages": [
+            ]
+		}
+	],
+	"preloadRule": {},
+    "globalStyle" : {
+        "navigationBarTitleText" : "por-uniapp",
+        "navigationStyle" : "custom",
+        "app-plus" : {}
+    },
+    "condition" : {
+		
+    }
+}
