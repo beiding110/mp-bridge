@@ -1,6 +1,8 @@
 <template>
 	<view class="page">		
 		<Stage></Stage>
+		
+		<Menu></Menu>
 	</view>
 </template>
 
@@ -12,11 +14,13 @@
 	import MIXIN_GLOBAL from '@/mixins/global.js';
 	
 	import Stage from './components/stage';
+	import Menu from './components/menu';
 
 	export default {
 		mixins: [MIXIN_GLOBAL],
 		components: {
 			Stage,
+			Menu,
 		},
 		data() {
 			return {

@@ -122,7 +122,8 @@
 			width: 350px;
 			height: auto;
 			border-radius: 8px;
-			background: white;
+			background: #FEF5EA;
+			border: 4px dashed #FBA756;
 			opacity: 1;
 
 			.header {
@@ -191,7 +192,7 @@
 			.context {
 				color: #3E3B39;
 				margin-top: 10px;
-				line-height: 1.5em;
+				line-height: 1.8em;
 			}
 		}
 
