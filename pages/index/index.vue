@@ -31,7 +31,9 @@
 
 		},
 		methods: {
-
+			pointClickHandler(e) {
+				console.log(e);
+			},
 		},
 		created() {
 

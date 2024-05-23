@@ -1,13 +1,26 @@
 <template>
 	<view class="schedule">
-		<view v-for="(item, index) in data" class="row">
+		<view 
+		v-for="(item, index) in data" 
+		class="row"
+		@click="rowClickHandler(item)"
+		>
 			<view class="col label">{{timeText(item.detail.time)}}</view>
-			<view class="col value">{{item.detail.name}}</view>
+			<view class="col value">
+				{{item.detail.name}}
+				
+				<view v-if="currentPoint === item.id" class="badge"></view>
+			</view>
 		</view>
 	</view>
 </template>
 
 <script>
+	import {
+		mapState,
+		mapMutations,
+	} from 'vuex';
+	
 	import data from '../data.js';
 	
 	export default {
@@ -17,13 +30,23 @@
 				data,
 			};
 		},
+		computed: {
+			...mapState(['currentPoint']),
+		},
 		methods: {
+			...mapMutations(['updateCurrentPoint']),
 			timeText(arr) {
 				if (arr.length === 1) {
 					return arr[0];
 				}
 			
 				return `${arr[0]} - ${arr[1]}`;
+			},
+			rowClickHandler(row) {
+				var {id} = row;
+				
+				// 切换badge
+				this.updateCurrentPoint(id);
 			},
 		},
 		mounted() {
@@ -53,6 +76,17 @@
 				&.value{
 					flex: 1;
 					margin-left: 6px;
+					position: relative;
+					
+					.badge{
+						width: 10px;
+						height: 10px;
+						background: red;
+						border-radius: 50%;
+						position: absolute;
+						right: -3px;
+						top: -3px;
+					}
 				}
 			}
 			

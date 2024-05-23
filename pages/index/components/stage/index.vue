@@ -17,7 +17,7 @@
 						:img="item.point.img"
 						:position="item.point.position"
 						:detail="item.detail" 
-						:badge="currentActive === item.id"
+						:badge="currentPoint === item.id"
 						@click.native="pointClickHandler(item)"
 					></PointCom>
 				</template>
@@ -27,6 +27,11 @@
 </template>
 
 <script>
+	import {
+		mapState,
+		mapMutations,
+	} from 'vuex';
+	
 	import MapCom from './map';
 	import PointCom from './point';
 
@@ -45,14 +50,13 @@
 				data,
 
 				mapTheme: 'day',
-				
-				currentActive: data[0].id,
 			};
 		},
 		computed: {
-
+			...mapState(['currentPoint']),
 		},
 		methods: {
+			...mapMutations(['updateCurrentPoint']),
 			// 点击景点
 			pointClickHandler(item) {
 				let {
@@ -75,7 +79,9 @@
 				}
 				
 				// 切换badge
-				this.currentActive = id;
+				this.updateCurrentPoint(id);
+				
+				console.log(this.currentPoint)
 			},
 		},
 		mounted() {},

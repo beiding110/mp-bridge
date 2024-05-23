@@ -9,9 +9,15 @@ import homePageNav from './home-page-nav.js';
 import userinfo from './userinfo.js';
 
 export default new Vuex.Store({
-    state: {},
+    state: {
+		currentPoint: 'zhao-zhou-qiao',
+	},
     getters: {},
-    mutations: {},
+    mutations: {
+		updateCurrentPoint(state, value) {
+			state['currentPoint'] = value;
+		},
+	},
     actions: {},
     modules: {
       message,
