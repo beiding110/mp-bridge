@@ -4,10 +4,6 @@
 		direction="all" 
 		:x="mapOffset.x"
 		:y="mapOffset.y"
-		:scale="true"
-		:scale-value="1"
-		:scale-min="0.5"
-		:scale-max="2"
 		:style="{width: 'auto', height: 'auto'}"
 		>
 			<MapCom :theme="mapTheme" :size="mapSize">
@@ -52,8 +48,8 @@
 
 				mapTheme: 'day',
 				
-				pointSize: 400,
-				mapSize: 2000,
+				pointSize: 350,
+				mapSize: 3230,
 			};
 		},
 		computed: {

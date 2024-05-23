@@ -1,3 +1,5 @@
+const SCALE_NUM = 0.5;
+
 export default [
 	{
 		disabled: true,
@@ -10,7 +12,7 @@ export default [
 		id: 'zhao-zhou-qiao',
 		point: {
 			img: '/static/images/points/zhao-zhou-qiao.png',
-			position: [590, 1448]
+			position: [4165 * SCALE_NUM, 5438 * SCALE_NUM]
 		},
 		detail: {
 			name: '赵州桥',
@@ -24,7 +26,7 @@ export default [
 		id: 'bai-lin-chan-si',
 		point: {
 			img: '/static/images/points/bai-lin-chan-si.png',
-			position: [1010, 1058]
+			position: [4619 * SCALE_NUM, 4850 * SCALE_NUM]
 		},
 		detail: {
 			name: '柏林禅寺',
@@ -45,13 +47,13 @@ export default [
 		id: 'fu-xing-da-jie',
 		point: {
 			img: '/static/images/points/fu-xing-da-jie.png',
-			position: [1010, 1058]
+			position: [4680 * SCALE_NUM, 3320 * SCALE_NUM]
 		},
 		detail: {
 			name: '复兴大街-泊水公园特大桥',
 			img: '/static/images/shoots/fu-xing-da-jie.jpg',
 			time: ['14:00', '17:00'],
-			context: '复兴大街主辅路采用双向12车道的城市道路规模，全线新建隧道3座（正定古城段、白佛段、学苑路段），设置互通立交11座，增设出入口匝道16处，建设桥梁13座，复兴大街将连接畅通石家庄市23条城市道路，成为新的城市中轴线，构筑成外通内畅、转换高效、区间融合的城市路网新格局。泊水公园特大桥是石家庄复兴大街市政化改造工程项目的控制性工程之一，位于泊水公园，全长1111米，主桥造型来源于凌波飞虹，折射出多彩的画面，宁静、优美、生态、自然，寄托了石家庄人民对美好生活的向往，以及勇往直前、追逐梦想的决心。',
+			context: '复兴大街主辅路采用双向12车道的城市道路规模，全线新建隧道3座（正定古城段、白佛段、学苑路段），设置互通立交11座，增设出入口匝道16处，建设桥梁13座，复兴大街将连接畅通石家庄市23条城市道路，成为新的城市中轴线，构筑成外通内畅、转换高效、区间融合的城市路网新格局。<br/>泊水公园特大桥是石家庄复兴大街市政化改造工程项目的控制性工程之一，位于泊水公园，全长1111米，主桥造型来源于凌波飞虹，折射出多彩的画面，宁静、优美、生态、自然，寄托了石家庄人民对美好生活的向往，以及勇往直前、追逐梦想的决心。',
 			speech: '/static/audio/speech/fu-xing-da-jie.mp3',
 		}
 	},
@@ -59,7 +61,7 @@ export default [
 		id: 'hu-tuo-he-te-da-qiao',
 		point: {
 			img: '/static/images/points/hu-tuo-he-te-da-qiao.png',
-			position: [1010, 1058]
+			position: [4605 * SCALE_NUM, 2500 * SCALE_NUM]
 		},
 		detail: {
 			name: '滹沱河特大桥',
@@ -73,7 +75,7 @@ export default [
 		id: 'zheng-ding-cheng',
 		point: {
 			img: '/static/images/points/zheng-ding-cheng.png',
-			position: [1010, 1058]
+			position: [3439 * SCALE_NUM, 1871 * SCALE_NUM]
 		},
 		detail: {
 			name: '正定古城',
@@ -87,7 +89,7 @@ export default [
 		id: 'zheng-ding-ye-shi',
 		point: {
 			img: '/static/images/points/zheng-ding-ye-shi.png',
-			position: [1010, 1058]
+			position: [2813 * SCALE_NUM, 1069 * SCALE_NUM]
 		},
 		detail: {
 			name: '正定夜市',
@@ -108,13 +110,13 @@ export default [
 		id: 'tai-ping-he-xue-fu-qiao',
 		point: {
 			img: '/static/images/points/tai-ping-he-xue-fu-qiao.png',
-			position: [1010, 1058]
+			position: [1982 * SCALE_NUM, 1458 * SCALE_NUM]
 		},
 		detail: {
 			name: '太平河学府桥',
 			img: '/static/images/shoots/tai-ping-he-xue-fu-qiao.jpg',
 			time: ['08:30'],
-			context: '车上参观太平河学府桥，石家庄市学府路跨太平河桥长约1.39公里，主桥最大跨径为160米，为双向6车道加应急车道，主塔采用异型索塔设计，横桥向呈人字形，是河北省目前单塔跨径最大的斜拉桥。',
+			context: '太平河学府桥，石家庄市学府路跨太平河桥长约1.39公里，主桥最大跨径为160米，为双向6车道加应急车道，主塔采用异型索塔设计，横桥向呈人字形，是河北省目前单塔跨径最大的斜拉桥。',
 			speech: '/static/audio/speech/tai-ping-he-xue-fu-qiao.mp3',
 		}
 	},
@@ -122,7 +124,7 @@ export default [
 		id: 'tai-ping-he-pian-qu',
 		point: {
 			img: '/static/images/points/tai-ping-he-pian-qu.png',
-			position: [1010, 1058]
+			position: [1498 * SCALE_NUM, 1963 * SCALE_NUM]
 		},
 		detail: {
 			name: '太平河风景区',
@@ -143,7 +145,7 @@ export default [
 		id: 'wan-li-miao',
 		point: {
 			img: '/static/images/points/wan-li-miao.png',
-			position: [1010, 1058]
+			position: [1498 * SCALE_NUM, 2703 * SCALE_NUM]
 		},
 		detail: {
 			name: '湾里庙步行街',
@@ -157,13 +159,13 @@ export default [
 		id: 'da-shi-qiao',
 		point: {
 			img: '/static/images/points/da-shi-qiao.png',
-			position: [1010, 1058]
+			position: [2720 * SCALE_NUM, 2934 * SCALE_NUM]
 		},
 		detail: {
 			name: '大石桥',
 			img: '/static/images/shoots/da-shi-qiao.jpg',
 			time: ['13:30', '15:30'],
-			context: '正太广场位于河北省石家庄市，地处石家庄中央商务区中心，是中央商务区的核心空间。正太广场区域内包含两个省级文保单位——正太饭店和大石桥。大石桥——石家庄大石桥位于石家庄市中心，大桥路与公里街交口东北侧，石家庄解放纪念碑之北。大石桥建于1907年，全长150米，高7米，宽10米，共23孔；桥身全系石灰岩砌成，坡面平缓；桥头两侧各有石狮雕塑二尊。',
+			context: '石家庄大石桥位于石家庄市中心，大桥路与公里街交口东北侧，石家庄解放纪念碑之北。大石桥建于1907年，全长150米，高7米，宽10米，共23孔；桥身全系石灰岩砌成，坡面平缓；桥头两侧各有石狮雕塑二尊。',
 			speech: '/static/audio/speech/da-shi-qiao.mp3',
 		}
 	},
@@ -171,7 +173,7 @@ export default [
 		id: 'zheng-tai-fan-dian',
 		point: {
 			img: '/static/images/points/zheng-tai-fan-dian.png',
-			position: [1010, 1058]
+			position: [2704 * SCALE_NUM, 3424 * SCALE_NUM]
 		},
 		detail: {
 			name: '正太饭店',
@@ -185,7 +187,7 @@ export default [
 		id: 'gao-tie-pian-qu',
 		point: {
 			img: '/static/images/points/gao-tie-pian-qu.png',
-			position: [1010, 1058]
+			position: [1420 * SCALE_NUM, 4903 * SCALE_NUM]
 		},
 		detail: {
 			name: '石家庄高铁片区',

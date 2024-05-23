@@ -4,7 +4,7 @@
 			路线概览
 		</view>
 		
-		<Schedule></Schedule>
+		<Schedule @close="$emit('close')"></Schedule>
 	</view>
 </template>
 

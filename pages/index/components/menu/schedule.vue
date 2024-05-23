@@ -44,8 +44,14 @@
 				return `${arr[0]} - ${arr[1]}`;
 			},
 			rowClickHandler(row) {
+				if (row.disabled) {
+					return;
+				}
+				
 				// 切换badge
 				this.updateCurrentPoint(row);
+				
+				this.$emit('close');
 			},
 		},
 		mounted() {

@@ -48,11 +48,11 @@
 			},
 			day: {
 				type: String,
-				default: '/static/images/map/day.png',
+				default: '/static/images/map/day.jpg',
 			},
 			night: {
 				type: String,
-				default: '/static/images/map/night.png',
+				default: '/static/images/map/night.jpg',
 			},
 			position: {
 				type: Array,

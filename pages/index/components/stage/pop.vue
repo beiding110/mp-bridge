@@ -7,10 +7,15 @@
 					ref="speech"
 					:src="speech"
 					:disabled="!model"
+					:size="22"
 				></Speech>
 			</view>
 			<view class="right">
-				<u-icon name="close" @click.native.stop="closeHandler"></u-icon>
+				<u-icon 
+					name="close" 
+					:size="22"
+					@click.native.stop="closeHandler"
+				></u-icon>
 			</view>
 		</view>
 		<view class="body">
@@ -177,7 +182,8 @@
 						background: #38521C;
 						border: 4px solid #FBA756;
 						border-radius: 8px;
-						padding: .5em;
+						padding: .1em .5em;
+						line-height: 1.3em;
 					}
 
 					.time {

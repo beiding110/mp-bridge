@@ -21,7 +21,7 @@
 		:safeAreaInsetTop="true"
 		@close="closeHandler"
 		>
-			<Overview></Overview>
+			<Overview @close="closeHandler"></Overview>
 		</u-popup>
 	</view>
 </template>

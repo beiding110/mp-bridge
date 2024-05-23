@@ -1,6 +1,7 @@
 <template>
 	<u-icon 
 		:name="iconName" 
+		:size="size"
 		@click.native.stop="audioClickHandler"
 	></u-icon>
 </template>
@@ -10,7 +11,11 @@
 		props: {
 			src: {
 				type: String,
-				default: '',
+				default: '16',
+			},
+			size: {
+				type: [String, Number],
+				default: '16px',
 			},
 			disabled: {
 				type: Boolean,
