@@ -13,6 +13,7 @@
 		</view>
 		
 		<u-popup 
+		class="popup"
 		:show="popMenuShow" 
 		mode="left" 
 		:closeOnClickOverlay="true" 
@@ -75,6 +76,14 @@
 				
 				& + .line {
 					margin-top: 3px;
+				}
+			}
+		}
+		
+		.popup{
+			::v-deep {
+				.u-popup__content{
+					height: 100%;
 				}
 			}
 		}

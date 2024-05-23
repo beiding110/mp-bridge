@@ -33,6 +33,7 @@
 <style scoped lang="scss">
 	.overview{
 		padding: 8px;
+		overflow: auto;
 		
 		.title{
 			font-size: 20px;

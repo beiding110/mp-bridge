@@ -11,7 +11,7 @@
 		:style="{width: 'auto', height: 'auto'}"
 		>
 			<MapCom :theme="mapTheme" :size="mapSize">
-				<template v-for="(item, index) in data">
+				<template v-for="(item, index) in pointsData">
 					<PointCom 
 						:key="index" 
 						:img="item.point.img"
@@ -72,6 +72,9 @@
 					y: y + deviationH,
 				};
 			},
+			pointsData() {
+				return this.data.filter(item => !item.disabled);
+			}
 		},
 		methods: {
 			...mapMutations(['updateCurrentPoint']),

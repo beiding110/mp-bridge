@@ -3,6 +3,7 @@
 		<view 
 		v-for="(item, index) in data" 
 		class="row"
+		:class="{disabled: item.disabled}"
 		@click="rowClickHandler(item)"
 		>
 			<view class="col label">{{timeText(item.detail.time)}}</view>
@@ -90,6 +91,12 @@
 			
 			& + .row {
 				margin-top: 6px;
+			}
+			
+			&.disabled {
+				.value {
+					background: #5D7E5A;
+				}
 			}
 		}
 	}

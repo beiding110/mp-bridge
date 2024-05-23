@@ -5,11 +5,13 @@ Vue.use(Vuex);
 
 import message from './message.js';
 
-import data from '../pages/index/components/data.js'
+import data from '../pages/index/components/data.js';
+
+var pointsData = data.filter(item => !item.disabled);
 
 export default new Vuex.Store({
     state: {
-		currentPoint: data[0],
+		currentPoint: pointsData[0],
 	},
     getters: {
 		
