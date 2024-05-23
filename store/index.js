@@ -4,15 +4,16 @@ import Vuex from 'vuex';
 Vue.use(Vuex);
 
 import message from './message.js';
-import dictionary from './dictionary.js';
-import homePageNav from './home-page-nav.js';
-import userinfo from './userinfo.js';
+
+import data from '../pages/index/components/data.js'
 
 export default new Vuex.Store({
     state: {
-		currentPoint: 'zhao-zhou-qiao',
+		currentPoint: data[0],
 	},
-    getters: {},
+    getters: {
+		
+	},
     mutations: {
 		updateCurrentPoint(state, value) {
 			state['currentPoint'] = value;
@@ -21,8 +22,5 @@ export default new Vuex.Store({
     actions: {},
     modules: {
       message,
-      dictionary,
-      homePageNav,
-      userinfo,
     },
 });

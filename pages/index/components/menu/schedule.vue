@@ -9,7 +9,7 @@
 			<view class="col value">
 				{{item.detail.name}}
 				
-				<view v-if="currentPoint === item.id" class="badge"></view>
+				<view v-if="currentPoint.id === item.id" class="badge"></view>
 			</view>
 		</view>
 	</view>
@@ -43,10 +43,8 @@
 				return `${arr[0]} - ${arr[1]}`;
 			},
 			rowClickHandler(row) {
-				var {id} = row;
-				
 				// 切换badge
-				this.updateCurrentPoint(id);
+				this.updateCurrentPoint(row);
 			},
 		},
 		mounted() {

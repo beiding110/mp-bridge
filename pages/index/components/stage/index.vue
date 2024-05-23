@@ -2,22 +2,23 @@
 	<movable-area class="stage">
 		<movable-view 
 		direction="all" 
-		:x="-590"
-		:y="-1448"
+		:x="mapOffset.x"
+		:y="mapOffset.y"
 		:scale="true"
 		:scale-value="1"
 		:scale-min="0.5"
 		:scale-max="2"
 		:style="{width: 'auto', height: 'auto'}"
 		>
-			<MapCom :theme="mapTheme">
+			<MapCom :theme="mapTheme" :size="mapSize">
 				<template v-for="(item, index) in data">
 					<PointCom 
 						:key="index" 
 						:img="item.point.img"
+						:size="pointSize"
 						:position="item.point.position"
 						:detail="item.detail" 
-						:badge="currentPoint === item.id"
+						:badge="currentPoint.id === item.id"
 						@click.native="pointClickHandler(item)"
 					></PointCom>
 				</template>
@@ -50,10 +51,27 @@
 				data,
 
 				mapTheme: 'day',
+				
+				pointSize: 500,
+				mapSize: 2000,
 			};
 		},
 		computed: {
 			...mapState(['currentPoint']),
+			mapOffset() {
+				var x = -1 * this.currentPoint.point.position[0],
+					y = -1 * this.currentPoint.point.position[1],
+					sysInfo = uni.getSystemInfoSync(),
+					winH = sysInfo.windowHeight, // 屏幕高
+					winW = sysInfo.windowWidth, // 屏幕宽
+					deviationH = winH / 3, // 高度偏移
+					deviationW = winW / 2; // 宽度偏移
+				
+				return {
+					x: x + deviationW - (this.pointSize / 2),
+					y: y + deviationH,
+				};
+			},
 		},
 		methods: {
 			...mapMutations(['updateCurrentPoint']),
@@ -79,12 +97,12 @@
 				}
 				
 				// 切换badge
-				this.updateCurrentPoint(id);
-				
-				console.log(this.currentPoint)
+				this.updateCurrentPoint(item);
 			},
 		},
-		mounted() {},
+		mounted() {
+			
+		},
 	}
 </script>
 
