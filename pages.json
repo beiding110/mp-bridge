@@ -20,7 +20,7 @@
 	],
 	"preloadRule": {},
     "globalStyle" : {
-        "navigationBarTitleText" : "por-uniapp",
+        "navigationBarTitleText" : "石家庄桥文化主题文旅线路",
         "navigationStyle" : "custom",
         "app-plus" : {}
     },
