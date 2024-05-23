@@ -8,32 +8,30 @@
 		top: `-${position[1]}px`,
 	}" 
 	>
-		<view 
+		<image 
 			class="layer day" 
+			:src="day"
 			:style="{
 				width: `${size}px`,
 				height: `${size}px`,
-				backgroundImage: `url(${bulidUrl(day)})`,
-				backgroundSize: `${size}px ${size}px`,
 			}"
-		></view>
-		<view 
+		></image>
+		<image 
 			class="layer night" 
 			:class="{active: theme === 'night'}" 
+			:src="night"
 			:style="{
 				width: `${size}px`,
 				height: `${size}px`,
-				backgroundImage: `url(${bulidUrl(night)})`,
-				backgroundSize: `${size}px ${size}px`,
 			}"
-		></view>
+		></image>
 
 		<slot></slot>
 	</view>
 </template>
 
 <script>
-	import AnyTouch from 'any-touch';
+	import buildUrl from '../../../../assets/js/buildUrl.js';
 
 	import Map from './map';
 
@@ -48,11 +46,11 @@
 			},
 			day: {
 				type: String,
-				default: '/static/web/images/map/day.jpg',
+				default: buildUrl('/static/web/images/map/day.jpg'),
 			},
 			night: {
 				type: String,
-				default: '/static/web/images/map/night.jpg',
+				default: buildUrl('/static/web/images/map/night.jpg'),
 			},
 			position: {
 				type: Array,
