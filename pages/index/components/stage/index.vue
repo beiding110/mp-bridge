@@ -52,7 +52,7 @@
 
 				mapTheme: 'day',
 				
-				pointSize: 500,
+				pointSize: 400,
 				mapSize: 2000,
 			};
 		},
