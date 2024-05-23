@@ -15,6 +15,7 @@
 			:img="detail.img" 
 			:time="detail.time" 
 			:context="detail.context"
+			:speech="detail.speech"
 		></Pop>
 	</view>
 </template>

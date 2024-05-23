@@ -1,7 +1,14 @@
 <template>
 	<view class="pop" :class="{active: model}" @click="openHandler">
 		<view class="header">
-			<view class="left"></view>
+			<view class="left">
+				<Speech 
+					v-if="speech" 
+					ref="speech"
+					:src="speech"
+					:disabled="!model"
+				></Speech>
+			</view>
 			<view class="right">
 				<u-icon name="close" @click.native.stop="closeHandler"></u-icon>
 			</view>
@@ -31,7 +38,12 @@
 </template>
 
 <script>
+	import Speech from './speech';
+	
 	export default {
+		components: {
+			Speech,
+		},
 		props: {
 			name: {
 				type: String,
@@ -48,7 +60,11 @@
 			context: {
 				type: String,
 				default: '-',
-			}
+			},
+			speech: {
+				type: String,
+				default: '',
+			},
 		},
 		data() {
 			return {
@@ -73,6 +89,10 @@
 				this.model = true;
 			},
 			closeHandler() {
+				try {
+					this.$refs.speech.stop();
+				} catch(e) {};
+				
 				this.model = false;
 			},
 		},
