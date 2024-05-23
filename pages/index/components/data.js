@@ -12,7 +12,7 @@ export default [
 		id: 'zhao-zhou-qiao',
 		point: {
 			img: '/static/images/points/zhao-zhou-qiao.png',
-			position: [4165 * SCALE_NUM, 5438 * SCALE_NUM]
+			position: [4165 * SCALE_NUM, 5638 * SCALE_NUM]
 		},
 		detail: {
 			name: '赵州桥',
@@ -26,7 +26,7 @@ export default [
 		id: 'bai-lin-chan-si',
 		point: {
 			img: '/static/images/points/bai-lin-chan-si.png',
-			position: [4619 * SCALE_NUM, 4850 * SCALE_NUM]
+			position: [4619 * SCALE_NUM, 4650 * SCALE_NUM]
 		},
 		detail: {
 			name: '柏林禅寺',
@@ -47,7 +47,7 @@ export default [
 		id: 'fu-xing-da-jie',
 		point: {
 			img: '/static/images/points/fu-xing-da-jie.png',
-			position: [4680 * SCALE_NUM, 3320 * SCALE_NUM]
+			position: [4680 * SCALE_NUM, 3620 * SCALE_NUM]
 		},
 		detail: {
 			name: '复兴大街-泊水公园特大桥',
@@ -173,7 +173,7 @@ export default [
 		id: 'zheng-tai-fan-dian',
 		point: {
 			img: '/static/images/points/zheng-tai-fan-dian.png',
-			position: [2704 * SCALE_NUM, 3424 * SCALE_NUM]
+			position: [2404 * SCALE_NUM, 3424 * SCALE_NUM]
 		},
 		detail: {
 			name: '正太饭店',
