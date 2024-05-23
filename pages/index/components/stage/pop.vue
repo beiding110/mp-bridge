@@ -56,7 +56,7 @@
 			},
 			img: {
 				type: String,
-				default: '/static/images/shoots/zhao-zhou-qiao.png',
+				default: '',
 			},
 			time: {
 				type: Array,

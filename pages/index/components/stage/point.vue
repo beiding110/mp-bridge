@@ -34,7 +34,7 @@
 			},
 			img: {
 				type: String,
-				default: '/static/images/points/zhao-zhou-qiao.png',
+				default: '',
 			},
 			position: {
 				type: Array,
