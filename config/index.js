@@ -8,6 +8,6 @@ export default {
 	// #ifndef H5
 	requestHead: 'https://www.por-uniapp.com/por-uniapp',
 	filePathHead: 'https://file.por-uniapp.com',
-	assetsUrl: 'http://assets.por-uniapp.com',
+	assetsUrl: 'http://localhost:8080',
 	// #endif
 };

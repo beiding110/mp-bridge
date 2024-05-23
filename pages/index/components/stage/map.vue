@@ -13,7 +13,7 @@
 			:style="{
 				width: `${size}px`,
 				height: `${size}px`,
-				backgroundImage: `url(${day})`,
+				backgroundImage: `url(${bulidUrl(day)})`,
 				backgroundSize: `${size}px ${size}px`,
 			}"
 		></view>
@@ -23,7 +23,7 @@
 			:style="{
 				width: `${size}px`,
 				height: `${size}px`,
-				backgroundImage: `url(${night})`,
+				backgroundImage: `url(${bulidUrl(night)})`,
 				backgroundSize: `${size}px ${size}px`,
 			}"
 		></view>
@@ -48,11 +48,11 @@
 			},
 			day: {
 				type: String,
-				default: '/static/images/map/day.jpg',
+				default: '/static/web/images/map/day.jpg',
 			},
 			night: {
 				type: String,
-				default: '/static/images/map/night.jpg',
+				default: '/static/web/images/map/night.jpg',
 			},
 			position: {
 				type: Array,
