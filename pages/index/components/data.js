@@ -1,7 +1,9 @@
-export default [{
+export default [
+	{
+		id: 'zhao-zhou-qiao',
 		point: {
 			img: '/static/images/points/zhao-zhou-qiao.png',
-			position: [20, 0]
+			position: [590, 1448]
 		},
 		detail: {
 			name: '赵州桥',
@@ -11,9 +13,10 @@ export default [{
 		}
 	},
 	{
+		id: 'bai-lin-chan-si',
 		point: {
 			img: '/static/images/points/bai-lin-chan-si.png',
-			position: [0, 300]
+			position: [1010, 1058]
 		},
 		detail: {
 			name: '柏林禅寺',

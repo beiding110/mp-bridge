@@ -2,14 +2,14 @@
 	<view 
 	class="point" 
 	:style="{
-		width: `${size}px`,
-		height: `${size}px`,
-		backgroundImage: `url(${img})`,
-		backgroundSize: `${size}px auto`,
 		left: `${position[0]}px`,
 		top: `${position[1]}px`,
 	}"
 	>
+		<image :src="img" mode="widthFix" :style="{width: `${size}px`}"></image>
+	
+		<view v-if="badge" class="badge"></view>
+		
 		<Pop 
 			:name="detail.name" 
 			:img="detail.img" 
@@ -43,6 +43,11 @@
 				type: Object,
 				default: () => ({}),
 			},
+			// 是否显示badge
+			badge: {
+				type: Boolean,
+				default: false,
+			},
 		},
 		data() {
 			return {
@@ -66,5 +71,30 @@
 		position: absolute;
 		background-repeat: no-repeat;
 		background-position: center center;
+		
+		.badge{
+			width: 20px;
+			height: 20px;
+			border-radius: 50%;
+			background: red;
+			position: absolute;
+			right: 0;
+			top: 0;
+			animation: shine 2s linear infinite;
+		}
+	}
+	
+	@keyframes shine {
+		0% {
+			opacity: 1;
+		}
+		
+		50% {
+			opacity: .2;
+		}
+		
+		100% {
+			opacity: 1;
+		}
 	}
 </style>

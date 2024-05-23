@@ -2,16 +2,22 @@
 	<movable-area class="stage">
 		<movable-view 
 		direction="all" 
+		:x="-590"
+		:y="-1448"
 		:scale="true"
+		:scale-value="1"
+		:scale-min="0.5"
+		:scale-max="2"
 		:style="{width: 'auto', height: 'auto'}"
 		>
-			<MapCom :position="[90, 0]" :theme="mapTheme">
+			<MapCom :theme="mapTheme">
 				<template v-for="(item, index) in data">
 					<PointCom 
 						:key="index" 
-						 :img="item.point.img"
-						 :position="item.point.position"
+						:img="item.point.img"
+						:position="item.point.position"
 						:detail="item.detail" 
+						:badge="currentActive === item.id"
 						@click.native="pointClickHandler(item)"
 					></PointCom>
 				</template>
@@ -39,6 +45,8 @@
 				data,
 
 				mapTheme: 'day',
+				
+				currentActive: data[0].id,
 			};
 		},
 		computed: {
@@ -48,12 +56,14 @@
 			// 点击景点
 			pointClickHandler(item) {
 				let {
-					detail
-				} = item, {
-					time
-				} = detail,
-				[starttime] = time,
-				timeHour = Number(starttime.split(':')[0]);
+						detail,
+						id,
+					} = item, 
+					{
+						time
+					} = detail,
+					[starttime] = time,
+					timeHour = Number(starttime.split(':')[0]);
 
 				// 切换主题	
 				if (timeHour >= 17 || timeHour <= 7) {
@@ -63,6 +73,9 @@
 					// 日间主题
 					this.mapTheme = 'day';
 				}
+				
+				// 切换badge
+				this.currentActive = id;
 			},
 		},
 		mounted() {},
