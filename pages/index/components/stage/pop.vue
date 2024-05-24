@@ -1,44 +1,46 @@
 <template>
-	<view class="pop" :class="{active: model}" @click="openHandler">
-		<view class="header">
-			<view class="left">
-				<Speech 
-					v-if="speech" 
-					ref="speech"
-					:src="speech"
-					:disabled="!model"
-					:size="22"
-				></Speech>
-			</view>
-			<view class="right">
-				<u-icon 
-					name="close" 
-					:size="22"
-					@click.native.stop="closeHandler"
-				></u-icon>
-			</view>
-		</view>
-		<view class="body">
-			<view class="title">
-				<view v-if="img" class="img">
-					<image :src="img" mode="aspectFit"></image>
+	<view class="pop" :class="{active: model}" @click.stop="openHandler">
+		<template v-if="innerShow">
+			<view class="header">
+				<view class="left">
+					<Speech 
+						v-if="speech" 
+						ref="speech"
+						:src="speech"
+						:disabled="!model"
+						:size="22"
+					></Speech>
 				</view>
-				<view class="desc">
-					<view class="name">
-						{{name}}
-					</view>
-
-					<view class="time">
-						{{timeText}}
-					</view>
+				<view class="right">
+					<u-icon 
+						name="close" 
+						:size="22"
+						@click.native.stop="closeHandler"
+					></u-icon>
 				</view>
 			</view>
-
-			<view class="context" v-html="context">
-
+			<view class="body">
+				<view class="title">
+					<view v-if="img" class="img">
+						<image :src="img" mode="aspectFit"></image>
+					</view>
+					<view class="desc">
+						<view class="name">
+							{{name}}
+						</view>
+			
+						<view class="time">
+							{{timeText}}
+						</view>
+					</view>
+				</view>
+			
+				<view class="context" v-html="context">
+			
+				</view>
 			</view>
-		</view>
-		<view class="footer"></view>
+			<view class="footer"></view>
+		</template>
 	</view>
 </template>
 
@@ -74,7 +76,8 @@
 		data() {
 			return {
 				model: false,
-			}
+				innerShow: false,
+			};
 		},
 		computed: {
 			timeText() {
@@ -92,6 +95,9 @@
 				}
 
 				this.model = true;
+				this.innerShow = true;
+				
+				this.$emit('click');
 			},
 			closeHandler() {
 				try {
@@ -99,6 +105,10 @@
 				} catch(e) {};
 				
 				this.model = false;
+				
+				setTimeout(() => {
+					this.innerShow = false;
+				}, 300);
 			},
 		},
 		mounted() {
@@ -121,6 +131,7 @@
 		top: 50%;
 		transform: translate(-50%, -50%);
 		overflow: hidden;
+		z-index: 100;
 
 		&.active {
 			position: absolute;
@@ -130,6 +141,7 @@
 			background: #FEF5EA;
 			border: 4px dashed #FBA756;
 			opacity: 1;
+			z-index: 200;
 
 			.header {
 				opacity: 1;

@@ -16,6 +16,7 @@
 			:time="detail.time" 
 			:context="detail.context"
 			:speech="detail.speech"
+			@click="$emit('click')"
 		></Pop>
 	</view>
 </template>

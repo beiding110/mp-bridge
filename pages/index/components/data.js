@@ -16,7 +16,7 @@ export default [
 		class: 'day1',
 		point: {
 			img: buildUrl('/static/web/images/points/zhao-zhou-qiao.png'),
-			position: [4165 * SCALE_NUM, 5638 * SCALE_NUM]
+			position: [4165 * SCALE_NUM, 5100 * SCALE_NUM]
 		},
 		detail: {
 			name: '赵州桥',

@@ -20,7 +20,7 @@
 						:position="item.point.position"
 						:detail="item.detail" 
 						:badge="currentPoint.id === item.id"
-						@click.native="pointClickHandler(item)"
+						@click="pointClickHandler(item)"
 					></PointCom>
 				</template>
 			</MapCom>
