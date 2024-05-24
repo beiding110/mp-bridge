@@ -3,6 +3,8 @@
 		<Stage></Stage>
 		
 		<Menu></Menu>
+		
+		<Explain></Explain>
 	</view>
 </template>
 
@@ -15,12 +17,14 @@
 	
 	import Stage from './components/stage';
 	import Menu from './components/menu';
+	import Explain from './components/explain';
 
 	export default {
 		mixins: [MIXIN_GLOBAL],
 		components: {
 			Stage,
 			Menu,
+			Explain,
 		},
 		data() {
 			return {
