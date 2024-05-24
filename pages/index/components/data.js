@@ -215,4 +215,19 @@ export default [
 			speech: buildUrl('/static/web/audio/speech/gao-tie-pian-qu.mp3'),
 		}
 	},
+	{
+		id: 'cai-hong-kong-zhong-zou-lang',
+		class: 'day2',
+		point: {
+			img: buildUrl('/static/web/images/points/cai-hong-kong-zhong-zou-lang.png'),
+			position: [2130 * SCALE_NUM, 4903 * SCALE_NUM]
+		},
+		detail: {
+			name: '彩虹空中走廊',
+			img: buildUrl('/static/web/images/shoots/cai-hong-kong-zhong-zou-lang.jpg'),
+			time: ['15:00', '16:30'],
+			context: '如意彩虹空中走廊，全长1070米，净空高度5.5米，上跨体育公园的四个主题区域，使得公园各区域互联互通、浑然一体。在桥上漫步、远眺和俯瞰公园风景，都是不错的选择。空中走廊拥有4部电梯及8条人行梯道，桥面柔性材质铺装让运动更舒适，桥侧采用集照明与信息显示于一体的光电玻璃。桥下有100多米长的投影灯带，形成水母、金鱼、彩虹等美丽而动感的画面。夜晚的灯光秀成为石家庄的一道美丽独特的风景线。',
+			speech: buildUrl('/static/web/audio/speech/cai-hong-kong-zhong-zou-lang.mp3'),
+		}
+	},
 ]
