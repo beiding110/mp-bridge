@@ -3,7 +3,7 @@
 		<view 
 		v-for="(item, index) in data" 
 		class="row"
-		:class="{disabled: item.disabled, [item.class]: true}"
+		:class="[item.disabled ? 'disabled' : '', item.class]"
 		@click="rowClickHandler(item)"
 		>
 			<view class="col label">{{timeText(item.detail.time)}}</view>
@@ -32,7 +32,7 @@
 			};
 		},
 		computed: {
-			...mapState(['currentPoint']),
+			...mapState(['currentPoint', 'updateDragPos']),
 		},
 		methods: {
 			...mapMutations(['updateCurrentPoint']),
@@ -50,6 +50,12 @@
 				
 				// 切换badge
 				this.updateCurrentPoint(row);
+				
+				// 清空拖拽位置
+				this.updateDragPos({
+					x: 0,
+					y: 0,
+				});
 				
 				this.$emit('close');
 			},
