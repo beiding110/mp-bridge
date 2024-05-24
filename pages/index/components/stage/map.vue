@@ -10,6 +10,7 @@
 	>
 		<image 
 			class="layer day" 
+			:class="{active: theme === 'day'}" 
 			:src="day"
 			:style="{
 				width: `${size}px`,
@@ -97,6 +98,15 @@
 			mask-repeat: no-repeat; 
 			mask-position: center;
 			mask-size: 100%;
+		}
+		
+		.day {
+			opacity: 0;
+			transition: all .3s;
+		
+			&.active {
+				opacity: 1;
+			}
 		}
 
 		.night {
