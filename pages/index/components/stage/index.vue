@@ -2,8 +2,8 @@
 	<movable-area class="stage">
 		<movable-view 
 		direction="all" 
-		:x="mapOffset.x"
-		:y="mapOffset.y"
+		:x="dragX ? dragX : mapOffset.x"
+		:y="dragY ? dragY : mapOffset.y"
 		:scale="true"
 		:scale-min="0.5"
 		:scale-max="1"
@@ -66,7 +66,7 @@
 			};
 		},
 		computed: {
-			...mapState(['currentPoint']),
+			...mapState(['currentPoint', 'dragX', 'dragY']),
 			mapOffset() {
 				var x = -1 * this.currentPoint.point.position[0],
 					y = -1 * this.currentPoint.point.position[1],
@@ -83,7 +83,7 @@
 			}
 		},
 		methods: {
-			...mapMutations(['updateCurrentPoint']),
+			...mapMutations(['updateCurrentPoint', 'updateDragPos']),
 			// 点击景点
 			pointClickHandler(item) {
 				let {
@@ -107,9 +107,21 @@
 				
 				// 切换badge
 				this.updateCurrentPoint(item);
+				
+				// 清空拖拽位置
+				this.updateDragPos({
+					x: 0,
+					y: 0,
+				});
 			},
 			dragChangeHandler(e) {
 				var {x, y} = e.detail;
+				
+				// 更新拖动位置
+				this.updateDragPos({
+					x,
+					y,
+				});
 			},
 			scaleChangeHandler(e) {
 				var {scale} = e.detail;

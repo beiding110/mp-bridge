@@ -12,6 +12,10 @@ var pointsData = data.filter(item => !item.disabled);
 export default new Vuex.Store({
     state: {
 		currentPoint: pointsData[0],
+		
+		// 拖拽方位
+		dragX: 0,
+		dragY: 0,
 	},
     getters: {
 		
@@ -19,6 +23,10 @@ export default new Vuex.Store({
     mutations: {
 		updateCurrentPoint(state, value) {
 			state['currentPoint'] = value;
+		},
+		updateDragPos(state, value) {
+			state.dragX = value.x;
+			state.dragY = value.y;
 		},
 	},
     actions: {},
