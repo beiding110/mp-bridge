@@ -32,10 +32,10 @@
 			};
 		},
 		computed: {
-			...mapState(['currentPoint', 'updateDragPos']),
+			...mapState(['currentPoint']),
 		},
 		methods: {
-			...mapMutations(['updateCurrentPoint']),
+			...mapMutations(['updateCurrentPoint', 'updateDragPos']),
 			timeText(arr) {
 				if (arr.length === 1) {
 					return arr[0];
