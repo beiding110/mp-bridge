@@ -4,7 +4,12 @@
 		direction="all" 
 		:x="mapOffset.x"
 		:y="mapOffset.y"
+		:scale="true"
+		:scale-min="0.5"
+		:scale-max="1"
 		:style="{width: 'auto', height: 'auto'}"
+		@change="dragChangeHandler"
+		@scale="scaleChangeHandler"
 		>
 			<MapCom :theme="mapTheme" :size="mapSize">
 				<template v-for="(item, index) in pointsData">
@@ -33,6 +38,12 @@
 	import PointCom from './point';
 
 	import data from '../data.js';
+	
+	var sysInfo = uni.getSystemInfoSync(),
+		winH = sysInfo.windowHeight, // 屏幕高
+		winW = sysInfo.windowWidth; // 屏幕宽
+		
+	const SCALE_NUM = 0.25;
 
 	export default {
 		components: {
@@ -48,8 +59,10 @@
 
 				mapTheme: 'day',
 				
-				pointSize: 350,
-				mapSize: 3230,
+				pointSize: 300,
+				mapSize: 6460 * SCALE_NUM,
+				
+				scale: 1,
 			};
 		},
 		computed: {
@@ -57,15 +70,12 @@
 			mapOffset() {
 				var x = -1 * this.currentPoint.point.position[0],
 					y = -1 * this.currentPoint.point.position[1],
-					sysInfo = uni.getSystemInfoSync(),
-					winH = sysInfo.windowHeight, // 屏幕高
-					winW = sysInfo.windowWidth, // 屏幕宽
 					deviationH = winH / 3, // 高度偏移
 					deviationW = winW / 2; // 宽度偏移
 				
 				return {
-					x: x + deviationW - (this.pointSize / 2),
-					y: y + deviationH,
+					x: (x - (this.pointSize / 2)) * this.scale + deviationW,
+					y: y * this.scale + deviationH,
 				};
 			},
 			pointsData() {
@@ -97,6 +107,14 @@
 				
 				// 切换badge
 				this.updateCurrentPoint(item);
+			},
+			dragChangeHandler(e) {
+				var {x, y} = e.detail;
+			},
+			scaleChangeHandler(e) {
+				var {scale} = e.detail;
+				
+				this.scale = scale;
 			},
 		},
 		mounted() {

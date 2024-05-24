@@ -1,6 +1,6 @@
 import buildUrl from '../../../assets/js/buildUrl.js';
 
-const SCALE_NUM = 0.5;
+const SCALE_NUM = 0.25;
 
 export default [
 	{
@@ -220,7 +220,7 @@ export default [
 		class: 'day2',
 		point: {
 			img: buildUrl('/static/web/images/points/cai-hong-kong-zhong-zou-lang.png'),
-			position: [2130 * SCALE_NUM, 4903 * SCALE_NUM]
+			position: [2500 * SCALE_NUM, 4903 * SCALE_NUM]
 		},
 		detail: {
 			name: '彩虹空中走廊',
