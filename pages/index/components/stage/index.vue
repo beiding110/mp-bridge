@@ -1,6 +1,7 @@
 <template>
-	<movable-area class="stage">
+	<movable-area class="stage" :class="[mapTheme]">
 		<movable-view 
+		class="view"
 		direction="all" 
 		:x="mapOffset.x"
 		:y="mapOffset.y"
@@ -8,7 +9,7 @@
 		:scale-min="0.5"
 		:scale-max="1"
 		:scale-value="mapScale"
-		:style="{width: 'auto', height: 'auto'}"
+		:style="{width: 'auto', height: 'auto', padding: `${mapBorderSize}px`}"
 		@change="dragChangeHandler"
 		@scale="scaleChangeHandler"
 		>
@@ -44,7 +45,8 @@
 		winH = sysInfo.windowHeight, // 屏幕高
 		winW = sysInfo.windowWidth; // 屏幕宽
 		
-	const SCALE_NUM = 0.25;
+	const SCALE_NUM = 0.18;
+	const BORDER_SIZE = 200; // 和view的padding值对应
 
 	export default {
 		components: {
@@ -60,8 +62,9 @@
 
 				mapTheme: 'day',
 				
-				pointSize: 300,
+				pointSize: 200,
 				mapSize: 6460 * SCALE_NUM,
+				mapBorderSize: 200,
 			};
 		},
 		computed: {
@@ -73,8 +76,8 @@
 					deviationW = winW / 2; // 宽度偏移
 				
 				return {
-					x: (x - (this.pointSize / 2)) * this.mapScale + deviationW,
-					y: y * this.mapScale + deviationH,
+					x: (x - (this.pointSize / 2) - this.mapBorderSize) * this.mapScale + deviationW,
+					y: (y - this.mapBorderSize) * this.mapScale + deviationH,
 				};
 			},
 			pointsData() {
@@ -140,5 +143,18 @@
 		height: 100vh;
 		position: relative;
 		overflow: hidden;
+		transition: all .3s;
+		
+		&.day {
+			background-color: #BFD7A5;
+		}
+		
+		&.night {
+			background-color: #022950;
+		}
+		
+		& .view{
+			
+		}
 	}
 </style>

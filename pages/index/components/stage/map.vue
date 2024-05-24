@@ -92,6 +92,11 @@
 			position: absolute;
 			left: 0;
 			top: 0;
+			
+			mask-image: radial-gradient(closest-side at 50% 50%, white 90%, transparent 100%);
+			mask-repeat: no-repeat; 
+			mask-position: center;
+			mask-size: 100%;
 		}
 
 		.night {
