@@ -4,6 +4,8 @@
 		
 		<Menu></Menu>
 		
+		<BynZoom></BynZoom>
+		
 		<Explain></Explain>
 	</view>
 </template>
@@ -18,6 +20,7 @@
 	import Stage from './components/stage';
 	import Menu from './components/menu';
 	import Explain from './components/explain';
+	import BynZoom from './components/btn-zoom';
 
 	export default {
 		mixins: [MIXIN_GLOBAL],
@@ -25,6 +28,7 @@
 			Stage,
 			Menu,
 			Explain,
+			BynZoom,
 		},
 		data() {
 			return {

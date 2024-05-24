@@ -14,8 +14,9 @@ export default new Vuex.Store({
 		currentPoint: pointsData[0],
 		
 		// 拖拽方位
-		dragX: 0,
-		dragY: 0,
+		mapX: 0,
+		mapY: 0,
+		mapScale: 1,
 	},
     getters: {
 		
@@ -24,9 +25,12 @@ export default new Vuex.Store({
 		updateCurrentPoint(state, value) {
 			state['currentPoint'] = value;
 		},
-		updateDragPos(state, value) {
-			state.dragX = value.x;
-			state.dragY = value.y;
+		updateMapPos(state, value) {
+			state.mapX = value.x;
+			state.mapY = value.y;
+		},
+		updateMapScale(state, value = 1) {
+			state.mapScale = value;
 		},
 	},
     actions: {},

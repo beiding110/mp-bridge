@@ -35,7 +35,7 @@
 			...mapState(['currentPoint']),
 		},
 		methods: {
-			...mapMutations(['updateCurrentPoint', 'updateDragPos']),
+			...mapMutations(['updateCurrentPoint', 'updateMapPos']),
 			timeText(arr) {
 				if (arr.length === 1) {
 					return arr[0];
@@ -52,7 +52,7 @@
 				this.updateCurrentPoint(row);
 				
 				// 清空拖拽位置
-				this.updateDragPos({
+				this.updateMapPos({
 					x: 0,
 					y: 0,
 				});

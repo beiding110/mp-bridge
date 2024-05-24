@@ -2,11 +2,12 @@
 	<movable-area class="stage">
 		<movable-view 
 		direction="all" 
-		:x="dragX ? dragX : mapOffset.x"
-		:y="dragY ? dragY : mapOffset.y"
+		:x="mapOffset.x"
+		:y="mapOffset.y"
 		:scale="true"
 		:scale-min="0.5"
 		:scale-max="1"
+		:scale-value="mapScale"
 		:style="{width: 'auto', height: 'auto'}"
 		@change="dragChangeHandler"
 		@scale="scaleChangeHandler"
@@ -61,12 +62,10 @@
 				
 				pointSize: 300,
 				mapSize: 6460 * SCALE_NUM,
-				
-				scale: 1,
 			};
 		},
 		computed: {
-			...mapState(['currentPoint', 'dragX', 'dragY']),
+			...mapState(['currentPoint', 'mapX', 'mapY', 'mapScale']),
 			mapOffset() {
 				var x = -1 * this.currentPoint.point.position[0],
 					y = -1 * this.currentPoint.point.position[1],
@@ -74,8 +73,8 @@
 					deviationW = winW / 2; // 宽度偏移
 				
 				return {
-					x: (x - (this.pointSize / 2)) * this.scale + deviationW,
-					y: y * this.scale + deviationH,
+					x: (x - (this.pointSize / 2)) * this.mapScale + deviationW,
+					y: y * this.mapScale + deviationH,
 				};
 			},
 			pointsData() {
@@ -83,7 +82,7 @@
 			}
 		},
 		methods: {
-			...mapMutations(['updateCurrentPoint', 'updateDragPos']),
+			...mapMutations(['updateCurrentPoint', 'updateMapPos', 'updateMapScale']),
 			// 点击景点
 			pointClickHandler(item) {
 				let {
@@ -109,7 +108,7 @@
 				this.updateCurrentPoint(item);
 				
 				// 清空拖拽位置
-				this.updateDragPos({
+				this.updateMapPos({
 					x: 0,
 					y: 0,
 				});
@@ -118,7 +117,7 @@
 				var {x, y} = e.detail;
 				
 				// 更新拖动位置
-				this.updateDragPos({
+				this.updateMapPos({
 					x,
 					y,
 				});
@@ -126,7 +125,7 @@
 			scaleChangeHandler(e) {
 				var {scale} = e.detail;
 				
-				this.scale = scale;
+				// this.updateMapScale(scale);
 			},
 		},
 		mounted() {
