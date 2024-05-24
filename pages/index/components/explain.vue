@@ -73,10 +73,11 @@
 			border: 4px dashed #FBA756;
 			border-radius: 8px;
 			padding: 20px;
+			box-sizing: border-box;
 			
 			.header {
 				display: flex;
-				padding-bottom: 16px;
+				padding-bottom: 14px;
 				align-items: center;
 				
 				.left{
@@ -85,7 +86,7 @@
 					.title{
 						display: inline-block;
 						color: #FBA756;
-						font-size: 22px;
+						font-size: 20px;
 						font-weight: bold;
 						background: #38521C;
 						border: 4px solid #FBA756;
