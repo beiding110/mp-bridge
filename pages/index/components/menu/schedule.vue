@@ -3,7 +3,7 @@
 		<view 
 		v-for="(item, index) in data" 
 		class="row"
-		:class="{disabled: item.disabled}"
+		:class="{disabled: item.disabled, [item.class]: true}"
 		@click="rowClickHandler(item)"
 		>
 			<view class="col label">{{timeText(item.detail.time)}}</view>
@@ -102,6 +102,29 @@
 			&.disabled {
 				.value {
 					background: #5D7E5A;
+				}
+			}
+			
+			&.day1 {
+				.label {
+					
+				}
+			}
+			
+			&.day2 {
+				.label {
+					background: #ACC35D;
+				}
+				
+				.value {
+					background: #90AB61;
+				}
+				
+				
+				&.disabled {
+					.value {
+						background: #747E5A;
+					}
 				}
 			}
 		}

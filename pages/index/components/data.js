@@ -5,6 +5,7 @@ const SCALE_NUM = 0.5;
 export default [
 	{
 		disabled: true,
+		class: 'day1',
 		detail: {
 			name: '石家庄火车站乘车赴赵州桥',
 			time: ['08:00'],
@@ -12,6 +13,7 @@ export default [
 	},
 	{
 		id: 'zhao-zhou-qiao',
+		class: 'day1',
 		point: {
 			img: buildUrl('/static/web/images/points/zhao-zhou-qiao.png'),
 			position: [4165 * SCALE_NUM, 5638 * SCALE_NUM]
@@ -26,6 +28,7 @@ export default [
 	},
 	{
 		id: 'bai-lin-chan-si',
+		class: 'day1',
 		point: {
 			img: buildUrl('/static/web/images/points/bai-lin-chan-si.png'),
 			position: [4619 * SCALE_NUM, 4650 * SCALE_NUM]
@@ -40,6 +43,7 @@ export default [
 	},
 	{
 		disabled: true,
+		class: 'day1',
 		detail: {
 			name: '午餐-特色驴肉火烧、驴油烧饼',
 			time: ['12:30', '14:00'],
@@ -47,6 +51,7 @@ export default [
 	},
 	{
 		id: 'fu-xing-da-jie',
+		class: 'day1',
 		point: {
 			img: buildUrl('/static/web/images/points/fu-xing-da-jie.png'),
 			position: [4680 * SCALE_NUM, 3620 * SCALE_NUM]
@@ -61,6 +66,7 @@ export default [
 	},
 	{
 		id: 'hu-tuo-he-te-da-qiao',
+		class: 'day1',
 		point: {
 			img: buildUrl('/static/web/images/points/hu-tuo-he-te-da-qiao.png'),
 			position: [4605 * SCALE_NUM, 2500 * SCALE_NUM]
@@ -75,6 +81,7 @@ export default [
 	},
 	{
 		id: 'zheng-ding-cheng',
+		class: 'day1',
 		point: {
 			img: buildUrl('/static/web/images/points/zheng-ding-cheng.png'),
 			position: [3439 * SCALE_NUM, 1871 * SCALE_NUM]
@@ -89,6 +96,7 @@ export default [
 	},
 	{
 		id: 'zheng-ding-ye-shi',
+		class: 'day1',
 		point: {
 			img: buildUrl('/static/web/images/points/zheng-ding-ye-shi.png'),
 			position: [2813 * SCALE_NUM, 1069 * SCALE_NUM]
@@ -103,6 +111,7 @@ export default [
 	},
 	{
 		disabled: true,
+		class: 'day1',
 		detail: {
 			name: '酒店休息',
 			time: ['21:00'],
@@ -110,6 +119,7 @@ export default [
 	},
 	{
 		id: 'tai-ping-he-xue-fu-qiao',
+		class: 'day2',
 		point: {
 			img: buildUrl('/static/web/images/points/tai-ping-he-xue-fu-qiao.png'),
 			position: [1982 * SCALE_NUM, 1458 * SCALE_NUM]
@@ -124,6 +134,7 @@ export default [
 	},
 	{
 		id: 'tai-ping-he-pian-qu',
+		class: 'day2',
 		point: {
 			img: buildUrl('/static/web/images/points/tai-ping-he-pian-qu.png'),
 			position: [1498 * SCALE_NUM, 1963 * SCALE_NUM]
@@ -138,6 +149,7 @@ export default [
 	},
 	{
 		disabled: true,
+		class: 'day2',
 		detail: {
 			name: '赴石家庄湾里庙步行街',
 			time: ['11:00', '11:30'],
@@ -145,6 +157,7 @@ export default [
 	},
 	{
 		id: 'wan-li-miao',
+		class: 'day2',
 		point: {
 			img: buildUrl('/static/web/images/points/wan-li-miao.png'),
 			position: [1498 * SCALE_NUM, 2703 * SCALE_NUM]
@@ -159,6 +172,7 @@ export default [
 	},
 	{
 		id: 'da-shi-qiao',
+		class: 'day2',
 		point: {
 			img: buildUrl('/static/web/images/points/da-shi-qiao.png'),
 			position: [2720 * SCALE_NUM, 2934 * SCALE_NUM]
@@ -173,6 +187,7 @@ export default [
 	},
 	{
 		id: 'zheng-tai-fan-dian',
+		class: 'day2',
 		point: {
 			img: buildUrl('/static/web/images/points/zheng-tai-fan-dian.png'),
 			position: [2404 * SCALE_NUM, 3424 * SCALE_NUM]
@@ -187,6 +202,7 @@ export default [
 	},
 	{
 		id: 'gao-tie-pian-qu',
+		class: 'day2',
 		point: {
 			img: buildUrl('/static/web/images/points/gao-tie-pian-qu.png'),
 			position: [1420 * SCALE_NUM, 4903 * SCALE_NUM]
