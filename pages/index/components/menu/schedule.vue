@@ -22,7 +22,7 @@
 		mapMutations,
 	} from 'vuex';
 	
-	import data from '../data.js';
+	import data from '../../data/data.js';
 	
 	export default {
 		props: {},

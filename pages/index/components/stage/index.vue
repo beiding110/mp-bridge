@@ -25,6 +25,8 @@
 						@click="pointClickHandler(item)"
 					></PointCom>
 				</template>
+				
+				<Car :to="currentPoint.id"></Car>
 			</MapCom>
 		</movable-view>
 	</movable-area>
@@ -38,8 +40,9 @@
 	
 	import MapCom from './map';
 	import PointCom from './point';
+	import Car from './car';
 
-	import data from '../data.js';
+	import data from '../../data/data.js';
 	
 	var sysInfo = uni.getSystemInfoSync(),
 		winH = sysInfo.windowHeight, // 屏幕高
@@ -52,6 +55,7 @@
 		components: {
 			MapCom,
 			PointCom,
+			Car,
 		},
 		props: {
 

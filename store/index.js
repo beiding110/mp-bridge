@@ -5,7 +5,7 @@ Vue.use(Vuex);
 
 import message from './message.js';
 
-import data from '../pages/index/components/data.js';
+import data from '../pages/index/data/data.js';
 
 var pointsData = data.filter(item => !item.disabled);
 
