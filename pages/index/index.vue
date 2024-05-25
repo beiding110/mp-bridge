@@ -6,9 +6,7 @@
 		
 		<BynZoom></BynZoom>
 		
-		<!-- #ifdef H5 -->
 		<Explain></Explain>
-		<!-- #endif -->
 	</view>
 </template>
 
