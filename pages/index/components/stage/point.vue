@@ -11,6 +11,7 @@
 		<view v-if="badge" class="badge"></view>
 		
 		<Pop 
+			ref="pop"
 			:name="detail.name" 
 			:img="detail.img" 
 			:time="detail.time" 
@@ -60,7 +61,9 @@
 			
 		},
 		methods: {
-
+			openPop() {
+				this.$refs.pop.show();
+			},
 		},
 		mounted() {
 

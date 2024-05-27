@@ -15,7 +15,7 @@
 			to: {
 				type: String,
 				default: '',
-			}
+			},
 		},
 		data() {
 			return {
@@ -34,7 +34,7 @@
 			to: {
 				handler(val) {
 					if (!val) {
-						返回起点
+						// 返回起点
 						this.run(0);
 						return;
 					}
@@ -67,7 +67,13 @@
 					}
 					
 					if (this.currentIndex === this.targetIndex) {
-						clearInterval(this.interval)
+						clearInterval(this.interval);
+						
+						if (!this.to) {
+							return;
+						}
+						
+						this.$emit('arrive', this.to);
 					}
 				}, 300);
 			},

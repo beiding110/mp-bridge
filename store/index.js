@@ -11,7 +11,12 @@ var pointsData = data.filter(item => !item.disabled);
 
 export default new Vuex.Store({
     state: {
-		currentPoint: pointsData[0],
+		// currentPoint: pointsData[0],
+		currentPoint: {
+			point: {
+				position: pointsData[0].point.position,
+			}
+		},
 		
 		// 拖拽方位
 		mapX: 0,

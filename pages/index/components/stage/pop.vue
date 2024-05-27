@@ -94,16 +94,22 @@
 					return;
 				}
 
-				this.model = true;
-				this.innerShow = true;
+				// this.show();
 				
 				this.$emit('click');
+			},
+			show() {
+				this.model = true;
+				this.innerShow = true;
 			},
 			closeHandler() {
 				try {
 					this.$refs.speech.stop();
 				} catch(e) {};
 				
+				this.close();
+			},
+			close() {
 				this.model = false;
 				
 				setTimeout(() => {

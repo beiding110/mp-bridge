@@ -16,6 +16,7 @@
 			<MapCom :theme="mapTheme" :size="mapSize">
 				<template v-for="(item, index) in pointsData">
 					<PointCom 
+						:ref="item.id"
 						:key="index" 
 						:img="item.point.img"
 						:size="pointSize"
@@ -26,7 +27,7 @@
 					></PointCom>
 				</template>
 				
-				<Car :to="currentPoint.id"></Car>
+				<Car :to="currentPoint.id" @arrive="carArriveHandler"></Car>
 			</MapCom>
 		</movable-view>
 	</movable-area>
@@ -74,8 +75,8 @@
 		computed: {
 			...mapState(['currentPoint', 'mapX', 'mapY', 'mapScale']),
 			mapOffset() {
-				var x = -1 * this.currentPoint.point.position[0],
-					y = -1 * this.currentPoint.point.position[1],
+				var x = -1 * this.currentPoint?.point?.position[0],
+					y = -1 * this.currentPoint?.point?.position[1],
 					deviationH = winH / 3, // 高度偏移
 					deviationW = winW / 2; // 宽度偏移
 				
@@ -133,6 +134,11 @@
 				var {scale} = e.detail;
 				
 				// this.updateMapScale(scale);
+			},
+			carArriveHandler(id) {
+				setTimeout(() => {
+					this.$refs[id][0].openPop();
+				}, 300);
 			},
 		},
 		mounted() {
