@@ -89,20 +89,17 @@
 				return this.data.filter(item => !item.disabled);
 			}
 		},
-		methods: {
-			...mapMutations(['updateCurrentPoint', 'updateMapPos', 'updateMapScale']),
-			// 点击景点
-			pointClickHandler(item) {
+		watch: {
+			currentPoint(value) {
 				let {
 						detail,
-						id,
-					} = item, 
+					} = value, 
 					{
 						time
 					} = detail,
 					[starttime] = time,
 					timeHour = Number(starttime.split(':')[0]);
-
+				
 				// 切换主题	
 				if (timeHour >= 17 || timeHour <= 7) {
 					// 夜间主题
@@ -111,7 +108,12 @@
 					// 日间主题
 					this.mapTheme = 'day';
 				}
-				
+			},
+		},
+		methods: {
+			...mapMutations(['updateCurrentPoint', 'updateMapPos', 'updateMapScale']),
+			// 点击景点
+			pointClickHandler(item) {				
 				// 切换badge
 				this.updateCurrentPoint(item);
 				
