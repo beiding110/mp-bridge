@@ -2,6 +2,7 @@
 	<view class="schedule">
 		<view 
 		v-for="(item, index) in data" 
+		:key="index"
 		class="row"
 		:class="[item.disabled ? 'disabled' : '', item.class]"
 		@click="rowClickHandler(item)"
