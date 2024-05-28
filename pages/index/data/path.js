@@ -1,5 +1,6 @@
+import TRANSFORM from './transform.js';
 
-const SCALE_NUM = 0.18;
+const { SCALE_NUM } = TRANSFORM;
 	
 function transformNum(num) {
 	return (num ) * SCALE_NUM;

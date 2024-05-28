@@ -44,13 +44,13 @@
 	import Car from './car';
 
 	import data from '../../data/data.js';
+	import TRANSFORM from '../../data/transform.js';
 	
 	var sysInfo = uni.getSystemInfoSync(),
 		winH = sysInfo.windowHeight, // 屏幕高
 		winW = sysInfo.windowWidth; // 屏幕宽
 		
-	const SCALE_NUM = 0.18;
-	const BORDER_SIZE = 200; // 和view的padding值对应
+	const { MAP_SIZE, POINT_SIZE, SCALE_NUM, MAP_BORDER_SIZE } = TRANSFORM;
 
 	export default {
 		components: {
@@ -67,9 +67,9 @@
 
 				mapTheme: 'day',
 				
-				pointSize: 200,
-				mapSize: 6460 * SCALE_NUM,
-				mapBorderSize: 200,
+				pointSize: POINT_SIZE,
+				mapSize: MAP_SIZE * SCALE_NUM,
+				mapBorderSize: MAP_BORDER_SIZE,
 			};
 		},
 		computed: {

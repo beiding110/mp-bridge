@@ -1,10 +1,10 @@
 import buildUrl from '../../../assets/js/buildUrl.js';
+import TRANSFORM from './transform.js';
 
-const SCALE_NUM = 0.18,
-	OFFSET_NUM = 200;
+const { SCALE_NUM, MAP_BORDER_SIZE } = TRANSFORM;
 
 function transformNum(num) {
-	return (num + OFFSET_NUM) * SCALE_NUM;
+	return (num + MAP_BORDER_SIZE) * SCALE_NUM;
 }
 
 export default [
